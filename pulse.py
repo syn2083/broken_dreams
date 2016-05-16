@@ -16,8 +16,9 @@ from sqlalchemy import Column, Integer, Float
 from sqlalchemy import orm
 import time
 import random
-from core_mudlib import log_system
-from core_mudlib.db_core import DataBase
+import log_system
+import dreamscape
+from db_core import DataBase
 
 logger = log_system.init_logging()
 
@@ -90,4 +91,5 @@ class Pulse(DataBase):
             self._point['zone'] = time.time() + self.zone
         if now >= self._point['update']:
             logger.debug('Doing update')
+            dreamscape.arch_structs['UID'].save_uid()
             self._point['update'] = time.time() + self.update + random.uniform(-self.variation, self.variation)

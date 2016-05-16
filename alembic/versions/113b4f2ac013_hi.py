@@ -13,6 +13,7 @@ branch_labels = None
 depends_on = None
 
 from alembic import op
+from alembic import context
 import sqlalchemy as sa
 
 

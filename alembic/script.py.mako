@@ -13,6 +13,7 @@ branch_labels = ${repr(branch_labels)}
 depends_on = ${repr(depends_on)}
 
 from alembic import op
+from alembic import context
 import sqlalchemy as sa
 ${imports if imports else ""}
 

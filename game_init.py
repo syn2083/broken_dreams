@@ -38,3 +38,4 @@ def init_server():
     server = miniboa.TelnetServer(port=dreamscape.port, timeout=dreamscape.timeout)
     logger.boot('Broken Dreams is ready to rock on port {}!'.format(dreamscape.port))
     server.on_connect = init_descriptor
+    return server
